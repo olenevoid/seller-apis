@@ -16,8 +16,8 @@ def get_product_list(page, campaign_id, access_token):
     Выполняет запрос к API Маркета для получения товаров с пагинацией.
 
     Args:
-        page (str): Токен пагинации для получения следующей страницы
-        campaign_id (str): Идентификатор модели распространения
+        page (int): Токен пагинации для получения следующей страницы
+        campaign_id (int): Идентификатор модели распространения
         access_token (str): Токен доступа к API Яндекс.Маркета
 
     Returns:
@@ -51,7 +51,7 @@ def update_stocks(stocks, campaign_id, access_token):
 
     Args:
         stocks (list): Список словарей с данными об остатках
-        campaign_id (str): Идентификатор модели распространения
+        campaign_id (int): Идентификатор модели распространения
         access_token (str): Токен доступа к API Яндекс.Маркета
 
     Returns:
@@ -82,7 +82,7 @@ def update_price(prices, campaign_id, access_token):
 
     Args:
         prices (list): Список словарей с новыми ценами
-        campaign_id (str): Идентификатор модели распространения
+        campaign_id (int): Идентификатор модели распространения
         access_token (str): Токен доступа к API Яндекс.Маркета
 
     Returns:
@@ -112,7 +112,7 @@ def get_offer_ids(campaign_id, market_token):
     Собирает полный список товаров, обрабатывая все страницы результатов.
 
     Args:
-        campaign_id (str): Идентификатор модели распространения
+        campaign_id (int): Идентификатор модели распространения
         market_token (str): Токен доступа к API Яндекс.Маркета
 
     Returns:
@@ -145,7 +145,7 @@ def create_stocks(watch_remnants, offer_ids, warehouse_id):
     Args:
         watch_remnants (list): Данные об остатках от поставщика
         offer_ids (list): Список артикулов товаров на Маркете
-        warehouse_id (str): Идентификатор склада в системе Маркета
+        warehouse_id (int): Идентификатор склада в системе Маркета
 
     Returns:
         list: Список словарей в формате API Маркета
@@ -258,9 +258,9 @@ async def upload_stocks(watch_remnants, campaign_id, market_token, warehouse_id)
 
     Args:
         watch_remnants (list): Данные об остатках от поставщика
-        campaign_id (str): Идентификатор модели распространения
+        campaign_id (int): Идентификатор модели распространения
         market_token (str): Токен доступа к API Яндекс.Маркета
-        warehouse_id (str): Идентификатор склада
+        warehouse_id (int): Идентификатор склада
 
     Returns:
         tuple: Кортеж из двух списков:
